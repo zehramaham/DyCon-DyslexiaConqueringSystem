@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DCSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="idSchool" />
+    </Key>
+    <Property Name="idSchool" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameSchool" Type="varchar" MaxLength="255" />
+    <Property Name="contactPersonName" Type="varchar" MaxLength="255" />
+    <Property Name="contactPersonNumber" Type="bigint" />
+    <Property Name="emailID" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="StudentClassroom">
+    <Key>
+      <PropertyRef Name="StudentPersonal_idStudent" />
+    </Key>
+    <Property Name="StudentPersonal_idStudent" Type="int" Nullable="false" />
+    <Property Name="month_2" Type="varchar" MaxLength="255" />
+    <Property Name="understanding verbal instruction" Type="int" />
+    <Property Name="classroom assignment completion" Type="int" />
+    <Property Name="organizational skills" Type="int" />
+    <Property Name="getting hw to and from school" Type="int" />
+    <Property Name="hw completion" Type="int" />
+    <Property Name="relationship with peers" Type="int" />
+    <Property Name="following directions" Type="int" />
+    <Property Name="disrupting class" Type="int" />
+    <Property Name="verbal participation in class" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentHistory">
+    <Key>
+      <PropertyRef Name="StudentPersonal_idStudent" />
+    </Key>
+    <Property Name="StudentPersonal_idStudent" Type="int" Nullable="false" />
+    <Property Name="Teacher_idTeacher" Type="int" Nullable="false" />
+    <Property Name="trouble learning new material" Type="int" />
+    <Property Name="little desire to master new skills" Type="int" />
+    <Property Name="unable to tell time" Type="int" />
+    <Property Name="cannot repeat info" Type="int" />
+    <Property Name="trouble multithinking" Type="int" />
+    <Property Name="trouble following multistep directions" Type="int" />
+    <Property Name="difficulty copying" Type="int" />
+    <Property Name="difficulty orienting self" Type="int" />
+    <Property Name="poor spatial judgement" Type="int" />
+    <Property Name="confuses directions" Type="int" />
+    <Property Name="mixes up lower and upper cases" Type="int" />
+    <Property Name="reverses letters and numbers" Type="int" />
+    <Property Name="trouble ordering words and events" Type="int" />
+    <Property Name="mispronounciation" Type="int" />
+    <Property Name="trouble verbally expressing thoughts" Type="int" />
+    <Property Name="little to no connection to what others are discussing" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentPersonal">
+    <Key>
+      <PropertyRef Name="idStudent" />
+    </Key>
+    <Property Name="idStudent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="School_idSchool" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="grade" Type="int" />
+    <Property Name="age" Type="int" />
+    <Property Name="contact" Type="bigint" />
+    <Property Name="prevSchool" Type="varchar" MaxLength="255" />
+    <Property Name="currentlyStudying" Type="bit" />
+    <Property Name="nextSchool" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="StudentSchool">
+    <Key>
+      <PropertyRef Name="StudentPersonal_idStudent" />
+    </Key>
+    <Property Name="StudentPersonal_idStudent" Type="int" Nullable="false" />
+    <Property Name="month_2" Type="varchar" MaxLength="255" />
+    <Property Name="reading decoding" Type="int" />
+    <Property Name="reading comprehension" Type="int" />
+    <Property Name="reading rate_fluency" Type="int" />
+    <Property Name="spelling accuracy" Type="int" />
+    <Property Name="mathematics computation" Type="int" />
+    <Property Name="mathematics concepts" Type="int" />
+    <Property Name="handwriting" Type="int" />
+    <Property Name="writing rate" Type="int" />
+    <Property Name="punctuation_grammer" Type="int" />
+    <Property Name="ability to express thoughts through writing" Type="int" />
+    <Property Name="gross motor skills" Type="int" />
+    <Property Name="fine motor skills" Type="int" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="idTeacher" />
+    </Key>
+    <Property Name="idTeacher" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="School_idSchool" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="subject" Type="varchar" MaxLength="255" />
+    <Property Name="contact" Type="bigint" />
+    <Property Name="salary" Type="bigint" />
+  </EntityType>
+  <Association Name="FK__StudentCl__Stude__3F466844">
+    <End Role="StudentPersonal" Type="Self.StudentPersonal" Multiplicity="1" />
+    <End Role="StudentClassroom" Type="Self.StudentClassroom" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="StudentPersonal">
+        <PropertyRef Name="idStudent" />
+      </Principal>
+      <Dependent Role="StudentClassroom">
+        <PropertyRef Name="StudentPersonal_idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentHi__Stude__44FF419A">
+    <End Role="StudentPersonal" Type="Self.StudentPersonal" Multiplicity="1" />
+    <End Role="StudentHistory" Type="Self.StudentHistory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="StudentPersonal">
+        <PropertyRef Name="idStudent" />
+      </Principal>
+      <Dependent Role="StudentHistory">
+        <PropertyRef Name="StudentPersonal_idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentPe__Schoo__398D8EEE">
+    <End Role="School" Type="Self.School" Multiplicity="1" />
+    <End Role="StudentPersonal" Type="Self.StudentPersonal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="idSchool" />
+      </Principal>
+      <Dependent Role="StudentPersonal">
+        <PropertyRef Name="School_idSchool" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentSc__Stude__3C69FB99">
+    <End Role="StudentPersonal" Type="Self.StudentPersonal" Multiplicity="1" />
+    <End Role="StudentSchool" Type="Self.StudentSchool" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="StudentPersonal">
+        <PropertyRef Name="idStudent" />
+      </Principal>
+      <Dependent Role="StudentSchool">
+        <PropertyRef Name="StudentPersonal_idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teacher__School___4222D4EF">
+    <End Role="School" Type="Self.School" Multiplicity="1" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="idSchool" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="School_idSchool" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DCSModelStoreContainer">
+    <EntitySet Name="School" EntityType="Self.School" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentClassroom" EntityType="Self.StudentClassroom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentHistory" EntityType="Self.StudentHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentPersonal" EntityType="Self.StudentPersonal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentSchool" EntityType="Self.StudentSchool" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__StudentCl__Stude__3F466844" Association="Self.FK__StudentCl__Stude__3F466844">
+      <End Role="StudentPersonal" EntitySet="StudentPersonal" />
+      <End Role="StudentClassroom" EntitySet="StudentClassroom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentHi__Stude__44FF419A" Association="Self.FK__StudentHi__Stude__44FF419A">
+      <End Role="StudentPersonal" EntitySet="StudentPersonal" />
+      <End Role="StudentHistory" EntitySet="StudentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentPe__Schoo__398D8EEE" Association="Self.FK__StudentPe__Schoo__398D8EEE">
+      <End Role="School" EntitySet="School" />
+      <End Role="StudentPersonal" EntitySet="StudentPersonal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentSc__Stude__3C69FB99" Association="Self.FK__StudentSc__Stude__3C69FB99">
+      <End Role="StudentPersonal" EntitySet="StudentPersonal" />
+      <End Role="StudentSchool" EntitySet="StudentSchool" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teacher__School___4222D4EF" Association="Self.FK__Teacher__School___4222D4EF">
+      <End Role="School" EntitySet="School" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

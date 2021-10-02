@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DCSModelStoreContainer" CdmEntityContainer="DCSEntities">
+    <EntitySetMapping Name="Schools">
+      <EntityTypeMapping TypeName="DCSModel.School">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+          <ScalarProperty Name="nameSchool" ColumnName="nameSchool" />
+          <ScalarProperty Name="contactPersonName" ColumnName="contactPersonName" />
+          <ScalarProperty Name="contactPersonNumber" ColumnName="contactPersonNumber" />
+          <ScalarProperty Name="emailID" ColumnName="emailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentClassrooms">
+      <EntityTypeMapping TypeName="DCSModel.StudentClassroom">
+        <MappingFragment StoreEntitySet="StudentClassroom">
+          <ScalarProperty Name="StudentPersonal_idStudent" ColumnName="StudentPersonal_idStudent" />
+          <ScalarProperty Name="month_2" ColumnName="month_2" />
+          <ScalarProperty Name="understanding_verbal_instruction" ColumnName="understanding verbal instruction" />
+          <ScalarProperty Name="classroom_assignment_completion" ColumnName="classroom assignment completion" />
+          <ScalarProperty Name="organizational_skills" ColumnName="organizational skills" />
+          <ScalarProperty Name="getting_hw_to_and_from_school" ColumnName="getting hw to and from school" />
+          <ScalarProperty Name="hw_completion" ColumnName="hw completion" />
+          <ScalarProperty Name="relationship_with_peers" ColumnName="relationship with peers" />
+          <ScalarProperty Name="following_directions" ColumnName="following directions" />
+          <ScalarProperty Name="disrupting_class" ColumnName="disrupting class" />
+          <ScalarProperty Name="verbal_participation_in_class" ColumnName="verbal participation in class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentHistories">
+      <EntityTypeMapping TypeName="DCSModel.StudentHistory">
+        <MappingFragment StoreEntitySet="StudentHistory">
+          <ScalarProperty Name="StudentPersonal_idStudent" ColumnName="StudentPersonal_idStudent" />
+          <ScalarProperty Name="Teacher_idTeacher" ColumnName="Teacher_idTeacher" />
+          <ScalarProperty Name="trouble_learning_new_material" ColumnName="trouble learning new material" />
+          <ScalarProperty Name="little_desire_to_master_new_skills" ColumnName="little desire to master new skills" />
+          <ScalarProperty Name="unable_to_tell_time" ColumnName="unable to tell time" />
+          <ScalarProperty Name="cannot_repeat_info" ColumnName="cannot repeat info" />
+          <ScalarProperty Name="trouble_multithinking" ColumnName="trouble multithinking" />
+          <ScalarProperty Name="trouble_following_multistep_directions" ColumnName="trouble following multistep directions" />
+          <ScalarProperty Name="difficulty_copying" ColumnName="difficulty copying" />
+          <ScalarProperty Name="difficulty_orienting_self" ColumnName="difficulty orienting self" />
+          <ScalarProperty Name="poor_spatial_judgement" ColumnName="poor spatial judgement" />
+          <ScalarProperty Name="confuses_directions" ColumnName="confuses directions" />
+          <ScalarProperty Name="mixes_up_lower_and_upper_cases" ColumnName="mixes up lower and upper cases" />
+          <ScalarProperty Name="reverses_letters_and_numbers" ColumnName="reverses letters and numbers" />
+          <ScalarProperty Name="trouble_ordering_words_and_events" ColumnName="trouble ordering words and events" />
+          <ScalarProperty Name="mispronounciation" ColumnName="mispronounciation" />
+          <ScalarProperty Name="trouble_verbally_expressing_thoughts" ColumnName="trouble verbally expressing thoughts" />
+          <ScalarProperty Name="little_to_no_connection_to_what_others_are_discussing" ColumnName="little to no connection to what others are discussing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentPersonals">
+      <EntityTypeMapping TypeName="DCSModel.StudentPersonal">
+        <MappingFragment StoreEntitySet="StudentPersonal">
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="School_idSchool" ColumnName="School_idSchool" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="prevSchool" ColumnName="prevSchool" />
+          <ScalarProperty Name="currentlyStudying" ColumnName="currentlyStudying" />
+          <ScalarProperty Name="nextSchool" ColumnName="nextSchool" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentSchools">
+      <EntityTypeMapping TypeName="DCSModel.StudentSchool">
+        <MappingFragment StoreEntitySet="StudentSchool">
+          <ScalarProperty Name="StudentPersonal_idStudent" ColumnName="StudentPersonal_idStudent" />
+          <ScalarProperty Name="month_2" ColumnName="month_2" />
+          <ScalarProperty Name="reading_decoding" ColumnName="reading decoding" />
+          <ScalarProperty Name="reading_comprehension" ColumnName="reading comprehension" />
+          <ScalarProperty Name="reading_rate_fluency" ColumnName="reading rate_fluency" />
+          <ScalarProperty Name="spelling_accuracy" ColumnName="spelling accuracy" />
+          <ScalarProperty Name="mathematics_computation" ColumnName="mathematics computation" />
+          <ScalarProperty Name="mathematics_concepts" ColumnName="mathematics concepts" />
+          <ScalarProperty Name="handwriting" ColumnName="handwriting" />
+          <ScalarProperty Name="writing_rate" ColumnName="writing rate" />
+          <ScalarProperty Name="punctuation_grammer" ColumnName="punctuation_grammer" />
+          <ScalarProperty Name="ability_to_express_thoughts_through_writing" ColumnName="ability to express thoughts through writing" />
+          <ScalarProperty Name="gross_motor_skills" ColumnName="gross motor skills" />
+          <ScalarProperty Name="fine_motor_skills" ColumnName="fine motor skills" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="DCSModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="idTeacher" ColumnName="idTeacher" />
+          <ScalarProperty Name="School_idSchool" ColumnName="School_idSchool" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
