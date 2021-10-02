@@ -1,0 +1,162 @@
+﻿@model WebDevFinal.Models.StudentHistory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentHistory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher_idTeacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher_idTeacher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trouble_learning_new_material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trouble_learning_new_material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.little_desire_to_master_new_skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.little_desire_to_master_new_skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unable_to_tell_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unable_to_tell_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cannot_repeat_info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cannot_repeat_info)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trouble_multithinking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trouble_multithinking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trouble_following_multistep_directions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trouble_following_multistep_directions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difficulty_copying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difficulty_copying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difficulty_orienting_self)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difficulty_orienting_self)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.poor_spatial_judgement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.poor_spatial_judgement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.confuses_directions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.confuses_directions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mixes_up_lower_and_upper_cases)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mixes_up_lower_and_upper_cases)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reverses_letters_and_numbers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reverses_letters_and_numbers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trouble_ordering_words_and_events)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trouble_ordering_words_and_events)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mispronounciation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mispronounciation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trouble_verbally_expressing_thoughts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trouble_verbally_expressing_thoughts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.little_to_no_connection_to_what_others_are_discussing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.little_to_no_connection_to_what_others_are_discussing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPersonal.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPersonal.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentPersonal_idStudent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

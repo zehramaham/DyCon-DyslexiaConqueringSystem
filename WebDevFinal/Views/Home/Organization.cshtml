@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Organization";
+}
+
+<!DOCTYPE HTML>
+
+<script>
+window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title: {
+            text: "No. of students in each grade"
+        },
+        axisY: {
+            title: "Number of Students"
+        },
+        axisX: {
+            title: "Grade"
+        },
+        data: [{
+            type: "column",
+            dataPoints: @Html.Raw(ViewBag.DataPoints)
+	    }]
+    });
+    chart.render();
+}
+</script>
+
+<html>
+<body>
+    <div class="row col-lg-6">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </div>
+    <div class="row col-lg-6">
+        <p style="font-size:30px">This graph shows the number of students in every grade. </p>
+        <p style="font-size:30px">We can use this to check the distribution of our students over the organization.</p>
+        <p style="font-size:30px">This will help us to come up with moe effective policies and strategies.</p>
+    </div>
+    <hr />
+    <hr />
+
+    <div class="row col-lg-12" style="background-color:black; color:white">
+        <div>
+            <div class="col-lg-2">
+                <p>Click to see the personal information of each student</p>
+                <a href="#" class="btn-primary">@Html.ActionLink("Student's personal information", "index", "StudentPersonal")</a> <br />
+            </div>
+            <div class="col-lg-2">
+                <p>Click to see the personal information of each student</p>
+                @Html.ActionLink("Student's monthly classroom behavior", "index", "StudentClassroom") <br />
+            </div>
+            <div class="col-lg-2">
+                <p>Click to see the personal information of each student</p>
+                @Html.ActionLink("Student's monthly progress in school", "index", "StudentSchool") <br />
+            </div>
+            <div class="col-lg-2">
+                <p>Click to see the personal information of each student</p>
+                @Html.ActionLink("Student's history", "index", "StudentHistory") <br />
+            </div>
+            <div class="col-lg-2">
+                <p>Click to see the personal information of each student</p>
+                @Html.ActionLink("Teacher's personal information", "index", "Teacher")
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
+

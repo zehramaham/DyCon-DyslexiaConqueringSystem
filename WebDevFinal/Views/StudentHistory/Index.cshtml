@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebDevFinal.Models.StudentHistory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher_idTeacher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trouble_learning_new_material)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.little_desire_to_master_new_skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unable_to_tell_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cannot_repeat_info)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trouble_multithinking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trouble_following_multistep_directions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.difficulty_copying)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.difficulty_orienting_self)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poor_spatial_judgement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.confuses_directions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mixes_up_lower_and_upper_cases)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reverses_letters_and_numbers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trouble_ordering_words_and_events)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mispronounciation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trouble_verbally_expressing_thoughts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.little_to_no_connection_to_what_others_are_discussing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentPersonal.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher_idTeacher)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trouble_learning_new_material)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.little_desire_to_master_new_skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unable_to_tell_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cannot_repeat_info)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trouble_multithinking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trouble_following_multistep_directions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.difficulty_copying)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.difficulty_orienting_self)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poor_spatial_judgement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.confuses_directions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mixes_up_lower_and_upper_cases)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reverses_letters_and_numbers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trouble_ordering_words_and_events)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mispronounciation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trouble_verbally_expressing_thoughts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.little_to_no_connection_to_what_others_are_discussing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPersonal.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentPersonal_idStudent }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentPersonal_idStudent }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentPersonal_idStudent })
+        </td>
+    </tr>
+}
+
+</table>

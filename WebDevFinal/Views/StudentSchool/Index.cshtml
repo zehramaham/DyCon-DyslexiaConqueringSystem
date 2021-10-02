@@ -1,0 +1,111 @@
+﻿@model IEnumerable<WebDevFinal.Models.StudentSchool>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.month_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reading_decoding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reading_comprehension)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reading_rate_fluency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spelling_accuracy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mathematics_computation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mathematics_concepts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.handwriting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.writing_rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.punctuation_grammer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ability_to_express_thoughts_through_writing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gross_motor_skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fine_motor_skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentPersonal.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.month_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reading_decoding)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reading_comprehension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reading_rate_fluency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spelling_accuracy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mathematics_computation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mathematics_concepts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.handwriting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.writing_rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.punctuation_grammer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ability_to_express_thoughts_through_writing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gross_motor_skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fine_motor_skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPersonal.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentPersonal_idStudent }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentPersonal_idStudent }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentPersonal_idStudent })
+        </td>
+    </tr>
+}
+
+</table>

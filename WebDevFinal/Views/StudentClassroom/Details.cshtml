@@ -1,0 +1,106 @@
+﻿@model WebDevFinal.Models.StudentClassroom
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentClassroom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.month_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.month_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.understanding_verbal_instruction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.understanding_verbal_instruction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.classroom_assignment_completion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.classroom_assignment_completion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizational_skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizational_skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.getting_hw_to_and_from_school)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.getting_hw_to_and_from_school)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hw_completion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hw_completion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.relationship_with_peers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.relationship_with_peers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.following_directions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.following_directions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.disrupting_class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.disrupting_class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.verbal_participation_in_class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.verbal_participation_in_class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPersonal.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPersonal.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentPersonal_idStudent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

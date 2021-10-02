@@ -1,0 +1,130 @@
+﻿@model WebDevFinal.Models.StudentSchool
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentSchool</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.month_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.month_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reading_decoding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reading_decoding)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reading_comprehension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reading_comprehension)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reading_rate_fluency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reading_rate_fluency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spelling_accuracy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spelling_accuracy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mathematics_computation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mathematics_computation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mathematics_concepts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mathematics_concepts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.handwriting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.handwriting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.writing_rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.writing_rate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.punctuation_grammer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.punctuation_grammer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ability_to_express_thoughts_through_writing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ability_to_express_thoughts_through_writing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gross_motor_skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gross_motor_skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fine_motor_skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fine_motor_skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPersonal.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPersonal.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentPersonal_idStudent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

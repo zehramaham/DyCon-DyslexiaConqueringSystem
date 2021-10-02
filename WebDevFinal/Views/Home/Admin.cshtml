@@ -1,0 +1,106 @@
+﻿@model IEnumerable<WebDevFinal.Models.School>
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<br />
+<button id="btn1">Number of teachers per school</button><br />
+<button id="btn2">Number of students per school</button> <br />
+
+<div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div>
+<div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div>
+
+<script type="text/javascript" async="async">
+
+    btn1.onclick = function () {
+        var chart = new CanvasJS.Chart("chartContainer1", {
+            animationEnabled: true,
+            theme: "light1", // "light1", "light2", "dark1", "dark2"
+            exportEnabled: true,
+            title: {
+                text: "No. of teachers in each school"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 180,
+                toolTipContent: "<b>{label}</b>: {y}",
+		        showInLegend: "true",
+		        legendText: "{label}",
+		        indexLabel: "{label} - {y}",
+                dataPoints: @Html.Raw(ViewBag.DataPoints),
+	        }
+            ]
+        });
+        chart.render();
+    };
+
+    btn2.onclick = function () {
+        var chart1 = new CanvasJS.Chart("chartContainer2", {
+            animationEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title: {
+                text: "No. of students in each school"
+            },
+            axisY: {
+                title: "Number of Students"
+            },
+            axisX: {
+                title: "School"
+            },
+            data: [{
+                type: "column",
+                dataPoints: @Html.Raw(ViewBag.DataPoints2),
+            }
+            ]
+        });
+        chart1.render();
+    };
+</script>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "School")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nameSchool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contactPersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contactPersonNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nameSchool)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactPersonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactPersonNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "School",new { id = item.idSchool }, null) |
+                @Html.ActionLink("Details", "Details", "School", new { id = item.idSchool }, null) |
+                @Html.ActionLink("Delete", "Delete", "School", new { id = item.idSchool }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

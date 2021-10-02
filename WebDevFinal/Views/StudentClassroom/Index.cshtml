@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebDevFinal.Models.StudentClassroom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.month_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.understanding_verbal_instruction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.classroom_assignment_completion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.organizational_skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.getting_hw_to_and_from_school)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hw_completion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.relationship_with_peers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.following_directions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.disrupting_class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.verbal_participation_in_class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentPersonal.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.month_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.understanding_verbal_instruction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.classroom_assignment_completion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.organizational_skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.getting_hw_to_and_from_school)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hw_completion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.relationship_with_peers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.following_directions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.disrupting_class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.verbal_participation_in_class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPersonal.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentPersonal_idStudent }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentPersonal_idStudent }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentPersonal_idStudent })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,82 @@
+﻿@model WebDevFinal.Models.StudentPersonal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentPersonal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prevSchool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prevSchool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentlyStudying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentlyStudying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nextSchool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nextSchool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.nameSchool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.nameSchool)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idStudent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
